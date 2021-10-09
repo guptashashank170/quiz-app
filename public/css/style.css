@@ -1,0 +1,10 @@
+body
+{
+    margin: 0;padding: 0;background-color: rgb(221, 210, 210);
+}
+
+.login-container{
+    width:400px;
+    margin-top:50px;
+    text-align: center;
+}
