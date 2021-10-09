@@ -18,6 +18,7 @@ const morgan = require('morgan');
 
 const index_route=require('./routes/index');
 const login_route=require('./routes/login');
+const quiz_register=require('./routes/quiz_init');
 
 const User=require('./models/user_schema');
 
@@ -54,6 +55,7 @@ failureRedirect:'/'
 app.use(index_route);
 app.use(register_route);
 app.use(login_route);
+app.use(quiz_register);
 
 app.use((req,res,next)=>{
     console.log(req.session);
