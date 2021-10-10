@@ -15,11 +15,12 @@ router.get('/auth/login',(req,res)=>{
 
 router.get('/dashboard',(req,res)=>{
     res.render("dashboard");
-})
-
-router.get('/logout',(req,res)=>{
-    req.logout();
-    res.redirect('/');
 });
+
+router.get('/create/quiz',(req,res)=>{
+    res.render('createquiz',{layout:"main"})
+});
+
+
 
 module.exports=router;

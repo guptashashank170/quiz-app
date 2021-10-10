@@ -3,8 +3,31 @@ const router=express.Router();
 
 const quiz=require('../models/quiz_schema');
 
-router.post('/new-quiz', async(req,res)=>{
-    let new_quiz=quiz(req.body);
+router.post('/newquiz', async(req,res)=>{
+
+    let keys=Object.keys(req.body);
+    const questions=[];
+    let obj={};
+    keys.forEach((key)=>{
+
+        if(key.length==2)
+        obj.ques=req.body[key];
+
+        if(key.length==4 && key[0]=='q')
+        {
+            obj[`option_${key[3]}`]=req.body[key];
+        }
+
+        if(key[0]=='a')
+        {
+            obj.ans=req.body[key];
+            questions.push(obj);
+            obj={};
+        }
+    })
+
+    let new_quiz=new quiz({quiz_name:req.body.quiz_name,questions});   
+    
     try{
         const response=await new_quiz.save();
         console.log(response);
@@ -13,7 +36,9 @@ router.post('/new-quiz', async(req,res)=>{
     {
         console.log(err);
     }
-    res.send("Quiz Served");
+    
+    res.send("Quiz Submitted Succesfully");
+
 });
 
 module.exports=router;
