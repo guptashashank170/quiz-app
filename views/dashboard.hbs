@@ -1,28 +1,30 @@
- <div class="col s12 m7">
-    <h2 class="header">Horizontal Card</h2>
-    <div class="row">
-    <div class="card horizontal">
-    
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+<div class="dashcontainer z-depth-4">
+
+  <nav>
+    <div class="nav-wrapper dashnav">
+      <a href="/" class="brand-logo right">Quiz Application</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/create/quiz">Create Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="quiz-wrapper">
+
+    <div class="col quiz-item">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Quiz Title</span>
+     
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="/give-quiz/:quiz_id">Attempt Quiz</a>
         </div>
       </div>
-    </div>
-   <div class="card horizontal">
-    
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
     </div>
 
-  </div>
+</div>
+
+</div>

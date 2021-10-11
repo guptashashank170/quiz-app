@@ -1,4 +1,18 @@
-<h4>Create Quiz</h4>
+<div class="dashcontainer z-depth-4">
+   
+   <nav>
+    <div class="nav-wrapper dashnav">
+    <a href="/" class="brand-logo right">Quiz Application</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/create/quiz">Create Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<h4><center>Create Quiz</center></h4>
+
 
 <div class="form">
     <form action="/newquiz" method="post">
@@ -53,15 +67,15 @@
     </div>
 
     </div>
-    
-    <button class="btn waves-effect waves-light" type="submit" >Submit
-    <i class="material-icons done"></i>
-    </button>
-
+    <div class="row">
+    <button type="button" id="add-ques"class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i></button>
+    <button class="btn waves-effect waves-light center" type="submit" >Submit<i class="material-icons done"></i></button>
+    </div>
     </form>
     <br>
-     <button id="add-ques"class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i></button>
 
 </div>
 
 <script src="/js/quiz.js"></script>
+
+</div>
