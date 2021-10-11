@@ -1,15 +1,17 @@
 const express=require('express');
 const router=express.Router();
 
+const {ensureAuth,ensureGuest}=require('../utils/auth');
+
 router.get('/',(req,res)=>{
     res.render("home",{layout:"login"});
 });
 
-router.get('/auth/register',(req,res)=>{
+router.get('/auth/register',ensureGuest,(req,res)=>{
     res.render('register',{layout:"login"});
 });
 
-router.get('/auth/login',(req,res)=>{
+router.get('/auth/login',ensureGuest,(req,res)=>{
     res.render('login',{layout:"login"});
 });
 
