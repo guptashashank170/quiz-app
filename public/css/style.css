@@ -30,7 +30,6 @@ body
 .quiz-wrapper{
     display:flex;
     flex-wrap:wrap;
-    margin:10px;
     overflow-y: scroll;
     height:500px;
     width:1000px;
@@ -41,7 +40,7 @@ body
 }
 
 .quiz-item{
-    height:250px;
+    height:100px;
     width:300px;
     margin:5px;
 }
