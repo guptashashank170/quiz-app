@@ -40,6 +40,7 @@ body
 }
 
 .quiz-item{
+    margin:10px;
     height:100px;
     width:300px;
     margin:5px;

@@ -37,7 +37,7 @@ router.post('/newquiz', async(req,res)=>{
         console.log(err);
     }
     
-    res.send("Quiz Submitted Succesfully");
+    res.redirect('/dashboard');
 
 });
 

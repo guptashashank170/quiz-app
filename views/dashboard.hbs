@@ -25,7 +25,7 @@
   quizzes.forEach(quiz=>{
     console.log(quiz);
     var node =document.createElement('div');
-    node.className="quiz_element";
+    node.className="quiz-item";
     node.innerHTML=`<div class="quiz_element">
       
        <div class="col quiz-item">
@@ -35,7 +35,7 @@
      
         </div>
         <div class="card-action">
-          <a href="/give-quiz/${quiz._id}">Attempt Quiz</a>
+          <a href="/give-quiz/${quiz._id} class="waves-effect waves-light btn-large">Attempt Quiz</a>
         </div>
       </div>
     </div>
