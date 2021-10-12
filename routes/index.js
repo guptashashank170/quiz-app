@@ -3,7 +3,7 @@ const router=express.Router();
 
 const {ensureGuest}=require('../utils/auth');
 
-router.get('/',(req,res)=>{
+router.get('/',ensureGuest,(req,res)=>{
     res.render("home",{layout:"login"});
 });
 
