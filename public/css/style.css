@@ -45,3 +45,26 @@ body
 .quiz-content{
     height:100px;
 }
+
+.question_container{
+    margin:20px;
+}
+
+.options{
+    display:flex;
+}
+
+@media screen and (max-width:550px)
+{
+    .options{
+        display:block;
+    }
+    .optn{
+        width:250px;
+    }
+}
+.optn{
+    width:350px;
+    margin:10px;
+}
+
