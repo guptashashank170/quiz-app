@@ -37,14 +37,12 @@ router.post('/attempt-quiz/:id',ensureAuth,async (req,res)=>{
   
     try{
         const cur_quiz=await quiz.findOne({"_id":req.params.id},{"_id":0,"quiz_name":0});
-        console.log(cur_quiz);
-
+        let quiz_questions=cur_quiz.questions;
     }
     catch(e)
     {
         console.log(e);
     }
-    res.send("Ans Submitted");
 })
 
 
