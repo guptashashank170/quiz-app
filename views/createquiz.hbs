@@ -1,23 +1,9 @@
-<div class="dashcontainer z-depth-4">
-   
-   <nav>
-    <div class="nav-wrapper dashnav">
-    <a href="/" class="brand-logo right">Quiz Application</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="/logout">Logout</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/create/quiz">Create Quiz</a></li>
-      </ul>
-    </div>
-  </nav>
-
 <h4><center>Create Quiz</center></h4>
-
 
 <div class="form">
     <form action="/newquiz" method="post">
      <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate" name="quiz_name">
+          <input id="first_name" type="text"  required  class="validate" name="quiz_name">
           <label for="first_name">Name of the Quiz</label>
     </div>
     
@@ -28,7 +14,7 @@
     <!-- Question -->
 
     <div class="input-field col s6">
-        <input id="q1" type="text" class="validate" name="q1">
+        <input id="q1" type="text"  required  class="validate" name="q1">
         <label for="q1"><b>Question 1</b></label>
     </div>
     
@@ -36,11 +22,11 @@
 
     <div class="row">
     <div class="input-field col s6">
-        <input id="q1o1" type="text" class="validate" name="q1o1">
+        <input id="q1o1" type="text"  required  class="validate" name="q1o1">
         <label for="q1o1">Option 1</label>
     </div>
     <div class="input-field col s6">
-        <input id="q1o2" type="text" class="validate" name="q1o2">
+        <input id="q1o2" type="text"  required  class="validate" name="q1o2">
         <label for="q1o2">Option 2</label>
     </div>
     </div>
@@ -48,11 +34,11 @@
     <!-- Option 3&4 --> 
     <div class="row">
     <div class="input-field col s6">
-        <input id="q1o3" type="text" class="validate" name="q1o3">
+        <input id="q1o3" type="text"  required  class="validate" name="q1o3">
         <label for="q1o3">Option 3</label>
     </div>
     <div class="input-field col s6">
-        <input id="q1o4" type="text" class="validate" name="q1o4">
+        <input id="q1o4" type="text"  required  class="validate" name="q1o4">
         <label for="q1o4">Option 4</label>
     </div>
     </div>
@@ -60,7 +46,7 @@
     <!-- Ans -->
 
     <div class="input-field col s6">
-        <input id="ans1" type="text" class="validate" name="ans1">
+        <input id="ans1" type="text"  required  class="validate" name="ans1">
         <label for="ans1">Answer</label>
     </div>
 
@@ -77,5 +63,3 @@
 </div>
 
 <script src="/js/quiz.js"></script>
-
-</div>

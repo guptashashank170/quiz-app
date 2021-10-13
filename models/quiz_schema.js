@@ -6,12 +6,14 @@ const question_schema=new mongoose.Schema({
     option_2:String,
     option_3:String,
     option_4:String,
-    ans:String
+    ans:String,
 });
 
 const quiz_schema=new mongoose.Schema({
     quiz_name:String,
-    questions:[question_schema]
+    questions:[question_schema],
+    timeStamp:{type:String,default:new Date().toLocaleDateString()}
+
 });
 
 module.exports=mongoose.model('quiz',quiz_schema);

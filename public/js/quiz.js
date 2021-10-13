@@ -19,7 +19,7 @@ add_q.addEventListener("click",()=>{
     <!-- Question -->
 
     <div class="input-field col s6">
-        <input id="q${q_count}" type="text" class="validate" name="q${q_count}">
+        <input id="q${q_count}"  required  type="text" class="validate" name="q${q_count}">
         <label for="q${q_count}"><b>Question ${q_count}</b></label>
     </div>
     
@@ -27,11 +27,11 @@ add_q.addEventListener("click",()=>{
 
     <div class="row">
     <div class="input-field col s6">
-        <input id="q${q_count}o1" type="text" class="validate" name="q${q_count}o1">
+        <input id="q${q_count}o1"  required  type="text" class="validate" name="q${q_count}o1">
         <label for="q${q_count}o1">Option 1</label>
     </div>
     <div class="input-field col s6">
-        <input id="q${q_count}o2" type="text" class="validate" name="q${q_count}o2">
+        <input id="q${q_count}o2"  required  type="text" class="validate" name="q${q_count}o2">
         <label for="q${q_count}o2">Option 2</label>
     </div>
     </div>
@@ -39,11 +39,11 @@ add_q.addEventListener("click",()=>{
     <!-- Option 3&4 --> 
     <div class="row">
     <div class="input-field col s6">
-        <input id="q${q_count}o3" type="text" class="validate" name="q${q_count}o3">
+        <input id="q${q_count}o3"  required  type="text" class="validate" name="q${q_count}o3">
         <label for="q${q_count}o3">Option 3</label>
     </div>
     <div class="input-field col s6">
-        <input id="q${q_count}o4" type="text" class="validate" name="q${q_count}o4">
+        <input id="q${q_count}o4"  required  type="text" class="validate" name="q${q_count}o4">
         <label for="q${q_count}o4">Option 4</label>
     </div>
     </div>
@@ -51,7 +51,7 @@ add_q.addEventListener("click",()=>{
     <!-- Ans -->
 
     <div class="input-field col s6">
-        <input id="ans${q_count}" type="text" class="validate" name="ans${q_count}">
+        <input id="ans${q_count}"  required  type="text" class="validate" name="ans${q_count}">
         <label for="ans${q_count}">Answer</label>
     </div>
 
