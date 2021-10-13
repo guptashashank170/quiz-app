@@ -71,3 +71,13 @@ body
 .form{
     margin:10px;
 }
+
+.score_tab{
+    margin:10px;
+    height:100%;
+    width:100%;
+}
+
+.score_attempt{
+    margin:10px;
+}
