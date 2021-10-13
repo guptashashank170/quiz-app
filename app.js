@@ -6,8 +6,6 @@ const passport=require('passport');
 const session=require('express-session');
 const MongoStore=require('connect-mongo');
 
-// Config
-
 const PORT=process.env.PORT || 5000;
 
 //Database
