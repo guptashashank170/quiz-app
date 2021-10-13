@@ -11,7 +11,6 @@
     </div>
   </nav>
 
-
 <div id="quiz-container" class="quiz-wrapper">
 
 </div>
@@ -19,7 +18,9 @@
 </div>
 
 <script>
-  const values='{{{quizzes}}}';
+  colors=['blue-grey darken-1',' brown darken-4','green darken-4','indigo darken-4',' red accent-4'];
+  var el=1;
+  const values=`{{{quizzes}}}`;
   var quizzes=JSON.parse(values);
   var quiz_div=document.getElementById('quiz-container');
   quizzes.forEach(quiz=>{
@@ -29,17 +30,18 @@
     node.innerHTML=`<div class="quiz_element">
       
        <div class="col quiz-item">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
+      <div class="card ${colors[el%5]}">
+        <div class="card-content white-text quiz-content">
           <span class="card-title">${quiz.quiz_name}</span>
      
         </div>
         <div class="card-action">
-          <a href="/give-quiz/${quiz._id} class="waves-effect waves-light btn-large">Attempt Quiz</a>
+          <a href="/attempt-quiz/${quiz._id}" class="waves-effect waves-light btn-small">Attempt Quiz</a>
         </div>
       </div>
     </div>
   </div>`
   quiz_div.append(node);
+  el++;
   });
 </script>

@@ -50,7 +50,7 @@ app.use(morgan('dev'));
 const session_store=MongoStore.create({mongoUrl:process.env.MONGO_URL});
 
 app.use(session({
-    secret:"Fuck Off",
+    secret:"Top Secret",
     resave:false,
     saveUninitialized:false,
     store:session_store
