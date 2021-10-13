@@ -8,8 +8,6 @@ const MongoStore=require('connect-mongo');
 
 // Config
 
-const dotenv=require('dotenv');
-dotenv.config({path:"./config/config.env"});
 const PORT=process.env.PORT || 5000;
 
 //Database
