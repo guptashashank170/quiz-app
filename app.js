@@ -8,6 +8,8 @@ const MongoStore=require('connect-mongo');
 
 // Config
 
+const dotenv=require('dotenv');
+dotenv.config({path:"./config/config.env"});
 const PORT=process.env.PORT || 5000;
 
 //Database
@@ -31,7 +33,7 @@ const User=require('./models/user_schema');
 
 const passport_initialize=require('./utils/passport');
 passport_initialize(passport,email=>User.findOne({email:email})
-,id=>User.findOne({id:id}));
+,id=>User.findOne({"_id":id}));
 
 const app=express();
 

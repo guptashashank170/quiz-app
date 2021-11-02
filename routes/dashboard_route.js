@@ -9,8 +9,9 @@ const { ensureAuth } = require('../utils/auth');
 router.get('/dashboard', ensureAuth, async (req, res) => {
 
     try {
+        const cuser=await user.findOne({"_id":req.user._id});
         const quizzes = await quiz.find({}, { "_id": 1, "quiz_name": 1,"timeStamp":1});
-        res.render("dashboard", { layout: "main", quizzes: JSON.stringify(quizzes) });
+        res.render("dashboard", { layout: "main", quizzes: JSON.stringify(quizzes),username:cuser.username });
     }
     catch (e) {
         console.log(e);
@@ -22,8 +23,9 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
 router.get('/attempt-quiz/:id', ensureAuth, async (req, res) => {
 
     try {
+        const cuser=await user.findOne({"_id":req.user._id});
         const cur_quiz = await quiz.findOne({ "_id": req.params.id }, { "quiz_name": 1, "questions": 1, "_id": 0 });
-        res.render("quiz_attempt", { layout: "main", quiz_data: JSON.stringify(cur_quiz) });
+        res.render("quiz_attempt", { layout: "main", quiz_data: JSON.stringify(cur_quiz),username:cuser.username });
     }
     catch (e) {
         console.log(e);
@@ -50,7 +52,10 @@ router.post('/attempt-quiz/:id', ensureAuth, async (req, res) => {
         });
         score = ((score / (counter - 1)) * 100).toPrecision(4);
         score = String(score);
-        const dat = await user.findOneAndUpdate({ "_id": req.user._id }, {
+
+        const cuser=await user.findOne({"_id":req.user._id});
+
+        const dat = await user.findOneAndUpdate({ "_id": cuser._id }, {
             $push: {
                 quizzes: {
                     quiz_id: req.params.id,
@@ -68,15 +73,18 @@ router.post('/attempt-quiz/:id', ensureAuth, async (req, res) => {
     }
 });
 
-router.get('/viewscore/:score/:quiz_name/:id', (req, res) => {
-    res.render('viewscore', { score: req.params.score, quiz_name: req.params.quiz_name, quiz_id: req.params.id });
+router.get('/viewscore/:score/:quiz_name/:id', async (req, res) => {
+    const cuser=await user.findOne({"_id":req.user._id});
+    res.render('viewscore', { score: req.params.score, quiz_name: req.params.quiz_name, quiz_id: req.params.id,username:cuser.username });
 });
 
 router.get('/myscores', ensureAuth, async (req, res) => {
 
     try {
-        console.log(1);
-        const scores = await user.findOne({ '_id': req.user._id });
+
+        const cuser=await user.findOne({"_id":req.user._id});
+        console.log(cuser);
+        const scores = await user.findOne({ '_id': cuser._id });
         var quizs = [];
 
         for(let lquiz of scores.quizzes)
@@ -88,7 +96,7 @@ router.get('/myscores', ensureAuth, async (req, res) => {
 
         console.log(quizs);
 
-        res.render("myscores",{quiz_data:quizs});
+        res.render("myscores",{quiz_data:quizs,username:cuser.username});
     }
     catch (e) {
         console.log(e);
