@@ -10,7 +10,7 @@ const userSchema=new mongoose.Schema({
     username:String,
     email:String,
     hashpass:String,
-    quizzes:[quiz_score]
+    quizzes:[quiz_score],
 });
 
 
